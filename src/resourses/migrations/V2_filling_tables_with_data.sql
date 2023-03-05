@@ -1,41 +1,44 @@
-insert into countries (name) values ('Russia');
-insert into countries (name) values ('USA');
-insert into countries (name) values ('Germany');
+insert into countries (name)
+values ('Russia'),
+       ('USA'),
+       ('Germany');
 
-insert into areas (name, countrie_id) values ('Moscow_area', 1);
-insert into areas (name, countrie_id) values ('Novosibirsk_area', 1);
-insert into areas (name, countrie_id) values ('Sochi_area', 1);
-insert into areas (name, countrie_id) values ('Texas', 2);
-insert into areas (name, countrie_id) values ('California', 2);
-insert into areas (name, countrie_id) values ('Utah', 2);
-insert into areas (name, countrie_id) values ('Berlin_area', 3);
-insert into areas (name, countrie_id) values ('Hamburg_area', 3);
-insert into areas (name, countrie_id) values ('Bavaria_area', 3);
+insert into areas (name, country_id)
+values ('Moscow_area', (select id from countries where countries.name = 'Russia')),
+       ('Novosibirsk_area', (select id from countries where countries.name = 'Russia')),
+       ('Sochi_area', (select id from countries where countries.name = 'Russia')),
+       ('Texas', (select id from countries where countries.name = 'USA')),
+       ('California', (select id from countries where countries.name = 'USA')),
+       ('Utah', (select id from countries where countries.name = 'USA')),
+       ('Berlin_area', (select id from countries where countries.name = 'Germany')),
+       ('Hamburg_area', (select id from countries where countries.name = 'Germany')),
+       ('Bavaria_area', (select id from countries where countries.name = 'Germany'));
 
-insert into cities (name, area_id) values ('Moscow', 1);
-insert into cities (name, area_id) values ('Dmitrov', 1);
-insert into cities (name, area_id) values ('Podolsk', 1);
-insert into cities (name, area_id) values ('Novosibirsk', 2);
-insert into cities (name, area_id) values ('Karasuk', 2);
-insert into cities (name, area_id) values ('Berdsk', 2);
-insert into cities (name, area_id) values ('Sochi', 3);
-insert into cities (name, area_id) values ('Golovinka', 3);
-insert into cities (name, area_id) values ('Vishnevka', 3);
-insert into cities (name, area_id) values ('Ostin', 4);
-insert into cities (name, area_id) values ('Dallas', 4);
-insert into cities (name, area_id) values ('Huston', 4);
-insert into cities (name, area_id) values ('Los-Angeles', 5);
-insert into cities (name, area_id) values ('San-Fracisco', 5);
-insert into cities (name, area_id) values ('Sacramento', 5);
-insert into cities (name, area_id) values ('Salt-Lake-City', 6);
-insert into cities (name, area_id) values ('Beaver', 6);
-insert into cities (name, area_id) values ('Richfield', 6);
-insert into cities (name, area_id) values ('Berlin', 7);
-insert into cities (name, area_id) values ('Schönefeld', 7);
-insert into cities (name, area_id) values ('Vishnevka', 7);
-insert into cities (name, area_id) values ('Hamburg', 8);
-insert into cities (name, area_id) values ('Iserbrook', 8);
-insert into cities (name, area_id) values ('Barsbüttel', 8);
-insert into cities (name, area_id) values ('München', 9);
-insert into cities (name, area_id) values ('Augsburg', 9);
-insert into cities (name, area_id) values ('Erding', 9);
+insert into cities (name, area_id)
+values ('Moscow', (select id from areas where areas.name = 'Moscow_area')),
+       ('Dmitrov', (select id from areas where areas.name = 'Moscow_area')),
+       ('Podolsk', (select id from areas where areas.name = 'Moscow_area')),
+       ('Novosibirsk', (select id from areas where areas.name = 'Novosibirsk_area')),
+       ('Karasuk', (select id from areas where areas.name = 'Novosibirsk_area')),
+       ('Berdsk', (select id from areas where areas.name = 'Novosibirsk_area')),
+       ('Sochi', (select id from areas where areas.name = 'Sochi_area')),
+       ('Golovinka', (select id from areas where areas.name = 'Sochi_area')),
+       ('Vishnevka', (select id from areas where areas.name = 'Sochi_area')),
+       ('Ostin', (select id from areas where areas.name = 'Texas')),
+       ('Dallas', (select id from areas where areas.name = 'Texas')),
+       ('Huston', (select id from areas where areas.name = 'Texas')),
+       ('Los-Angeles', (select id from areas where areas.name = 'California')),
+       ('San-Fracisco', (select id from areas where areas.name = 'California')),
+       ('Sacramento', (select id from areas where areas.name = 'California')),
+       ('Salt-Lake-City', (select id from areas where areas.name = 'Utah')),
+       ('Beaver', (select id from areas where areas.name = 'Utah')),
+       ('Richfield', (select id from areas where areas.name = 'Utah')),
+       ('Berlin', (select id from areas where areas.name = 'Berlin_area')),
+       ('Schönefeld', (select id from areas where areas.name = 'Berlin_area')),
+       ('Ahrensfelde', (select id from areas where areas.name = 'Berlin_area')),
+       ('Hamburg', (select id from areas where areas.name = 'Hamburg_area')),
+       ('Iserbrook', (select id from areas where areas.name = 'Hamburg_area')),
+       ('Barsbüttel', (select id from areas where areas.name = 'Hamburg_area')),
+       ('München', (select id from areas where areas.name = 'Bavaria_area')),
+       ('Augsburg', (select id from areas where areas.name = 'Bavaria_area')),
+       ('Erding', (select id from areas where areas.name = 'Bavaria_area'));

@@ -1,22 +1,19 @@
 create table if not exists `countries`
 (
-    `id` int auto_increment,
-    `name` varchar(30),
-    primary key (id)
+    `id` int auto_increment primary key,
+    `name` varchar(30)
 );
 
 create table if not exists `areas`
 (
-    `id` int auto_increment,
+    `id` int auto_increment primary key,
     `name` varchar(30),
-    `countrie_id` int,
-    primary key (id)
+    `country_id` int
 );
 
 create table if not exists `cities`
 (
-    `id` int auto_increment,
+    `id` int auto_increment primary key,
     `name` varchar(30),
-    `area_id` int,
-    primary key (id)
+    `area_id` int
 );
