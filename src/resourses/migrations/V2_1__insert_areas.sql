@@ -1,9 +1,0 @@
-INSERT INTO areas (id, name, countrie_id) VALUES (1, 'Moscow_area', 1);
-INSERT INTO areas (id, name, countrie_id) VALUES (2, 'Novosibirsk_area', 1);
-INSERT INTO areas (id, name, countrie_id) VALUES (3, 'Sochi_area', 1);
-INSERT INTO areas (id, name, countrie_id) VALUES (4, 'Texas', 2);
-INSERT INTO areas (id, name, countrie_id) VALUES (5, 'California', 2);
-INSERT INTO areas (id, name, countrie_id) VALUES (6, 'Utah', 2);
-INSERT INTO areas (id, name, countrie_id) VALUES (7, 'Berlin_area', 3);
-INSERT INTO areas (id, name, countrie_id) VALUES (8, 'Hamburg_area', 3);
-INSERT INTO areas (id, name, countrie_id) VALUES (9, 'Bavaria_area', 3);
