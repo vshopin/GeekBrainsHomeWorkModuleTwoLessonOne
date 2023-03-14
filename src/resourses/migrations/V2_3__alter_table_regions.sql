@@ -14,6 +14,6 @@ alter table _regions
     drop title_cz;
 alter table _regions
     change column region_id id int not null auto_increment primary key,
-    change column title_ru title varchar(150) not null;
-alter table _regions add index(title);
-alter table _regions add foreign key (country_id) references _countries(id);
+    change column title_ru title varchar(150) not null,
+    add index(title),
+    add foreign key (country_id) references _countries(id);

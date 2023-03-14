@@ -15,5 +15,5 @@ alter table _countries
 
 alter table _countries
     change column country_id id int not null auto_increment primary key,
-    change column title_ru title varchar(150) not null;
-alter table _countries add index(title);
+    change column title_ru title varchar(150) not null,
+    add index(title);
