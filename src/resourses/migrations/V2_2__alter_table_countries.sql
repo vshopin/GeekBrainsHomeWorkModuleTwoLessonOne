@@ -11,9 +11,7 @@ alter table _countries
     drop title_ja,
     drop title_lt,
     drop title_lv,
-    drop title_cz;
-
-alter table _countries
+    drop title_cz,
     change column country_id id int not null auto_increment primary key,
     change column title_ru title varchar(150) not null,
     add index(title);
