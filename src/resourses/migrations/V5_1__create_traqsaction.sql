@@ -5,9 +5,9 @@ begin
   update salaries set to_date = curdate() where
     emp_no = num;
   update titles set to_date = curdate() where
-      emp_no = num;
+    emp_no = num;
   update dept_emp set to_date = curdate() where
-      emp_no = num;
+    emp_no = num;
   commit;
 end //
 delimiter ;
